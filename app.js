@@ -9,7 +9,7 @@ config({
 });
 const app = express();
 const corsOption = {
-    origin: 'http://localhost:3000',
+    origin: 'https://lms-frontend-theta.vercel.app',
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
 }
