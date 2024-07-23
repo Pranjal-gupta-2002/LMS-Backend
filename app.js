@@ -1,13 +1,19 @@
 import express from 'express';
 import dotenv, { config } from 'dotenv';
 import cookieParser from 'cookie-parser';
+import cors from "cors";
 
 
 config({
     path: "./config/config.env"
 });
 const app = express();
-
+const corsOption = {
+    origin: ['*'],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+}
+app.use(cors(corsOption));
 
 //using middlewares
 app.use(express.json());
