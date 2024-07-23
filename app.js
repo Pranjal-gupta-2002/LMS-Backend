@@ -8,12 +8,8 @@ config({
     path: "./config/config.env"
 });
 const app = express();
-const corsOption = {
-    origin: ['http://localhost:3000'],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-}
-app.use(cors(corsOption));
+
+app.use(cors());
 
 //using middlewares
 app.use(express.json());
