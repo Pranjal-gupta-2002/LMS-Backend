@@ -6,9 +6,9 @@ export const sendToken = (res,user,message,statusCode=200)=>{
 const token = user.getJWTToken();
 const options = {
     expires:new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
-    httpOnly:true,
-    // secure:true,
-    sameSite:"none"
+    httpOnly: true,
+    secure: true,  // Ensure your server is running over HTTPS
+    sameSite: 'None',  // Required for cross-origin cookies
 }
 
 
